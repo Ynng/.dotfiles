@@ -31,3 +31,6 @@ fi
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 
 p10k configure
+
+#Git stuff
+git config credential.helper store
