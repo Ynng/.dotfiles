@@ -10,7 +10,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.histfile
 setopt autocd extendedglob nomatch notify
-bindkey -e
+# bindkey -e
+bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
