@@ -8,6 +8,15 @@ fi
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 git config credential.helper store
 
+#P10K
+P10K=~/.p10k.zsh
+P10KBACKUP=~/.p10k.zsh-bak
+if test -f "$P10K"; then
+	echo "$P10K already exist, backing it up to $P10KBACKUP"
+	mv "$P10K" "$P10KBACKUP"
+fi
+ln -s ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
+
 #ZSHRC
 ZSHRC=~/.zshrc
 ZSHRCBACKUP=~/.zshrc_bak
