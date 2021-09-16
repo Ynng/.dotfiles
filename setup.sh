@@ -8,6 +8,15 @@ fi
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 git config credential.helper store
 
+#VIM
+VIM=~/.vimrc
+VIMBACKUP=~/.vimrc_bak
+if test -f "$VIM"; then
+	echo "$VIM already exist, backing it up to $VIMBACKUP"
+	mv "$VIM" "$VIMBACKUP"
+fi
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
+
 #P10K
 P10K=~/.p10k.zsh
 P10KBACKUP=~/.p10k.zsh-bak
