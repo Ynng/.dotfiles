@@ -1,3 +1,5 @@
 [user]
 	name = Ynng
 	email = 44907675+Ynng@users.noreply.github.com
+[core]
+	autocrlf = true
