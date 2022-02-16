@@ -6,7 +6,6 @@ if test -f "$GITCONFIG"; then
 	mv "$GITCONFIG" "$GITCONFIGBACKUP"
 fi
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-git config credential.helper store
 
 #VIM
 VIM=~/.vimrc

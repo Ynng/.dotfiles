@@ -3,3 +3,7 @@
 	email = 44907675+Ynng@users.noreply.github.com
 [core]
 	autocrlf = true
+[credential]
+	helper = cache
+	# Or use this one if you trust the machine 
+	# helper = store
