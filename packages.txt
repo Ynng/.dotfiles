@@ -2,3 +2,6 @@ git
 zsh
 neofetch
 curl
+build-essential
+
+
