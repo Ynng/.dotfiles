@@ -2,7 +2,7 @@
 	name = Ynng
 	email = 44907675+Ynng@users.noreply.github.com
 [core]
-	autocrlf = true
+	autocrlf = input
 [credential]
 	helper = cache
 	# Or use this one if you trust the machine 
