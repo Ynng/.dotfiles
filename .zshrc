@@ -16,8 +16,8 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
 
 
@@ -95,8 +95,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-history-substring-search command-not-found)
-# plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-history-substring-search command-not-found)
+plugins=(git zsh-syntax-highlighting zsh-completions command-not-found)
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+source ~/.zsh-other/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 source $ZSH/oh-my-zsh.sh
 

@@ -90,9 +90,14 @@ symlink_and_backup $HOMEDIR/.p10k.zsh $CURRENTDIR/.p10k.zsh
 echo "linking zshrc..."
 symlink_and_backup $HOMEDIR/.zshrc $CURRENTDIR/.zshrc
 
+#ZSHRC
+echo "linking bashrc..."
+symlink_and_backup $HOMEDIR/.bashrc $CURRENTDIR/.bashrc
+
 #OHMYZSH
 echo "backing up oh-my-zsh directory..."
 backup_dir $HOMEDIR/.oh-my-zsh
+
 
 #####################################
 #          _     
@@ -116,9 +121,24 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-$HOMEDIR/.o
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-$HOMEDIR/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOMEDIR/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOMEDIR/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $HOMEDIR/.zsh-other/zsh-autocomplete
 
 # Setting up p10k
 # p10k configure
+
+
+#####################################
+#  _               _
+# | |__   __ _ ___| |__
+# | '_ \ / _` / __| '_ \
+# | |_) | (_| \__ | | | |
+# |_.__/ \__,_|___|_| |_|
+#####################################
+
+# Setting up on my bash
+rm $CURRENTDIR/install.sh
+bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
+rm $CURRENTDIR/install.sh
 
 #####################################
 # ___  ____          
