@@ -96,12 +96,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-history-substring-search command-not-found)
-plugins=(git zsh-syntax-highlighting zsh-completions command-not-found)
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
-source ~/.zsh-other/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+plugins=(git zsh-syntax-highlighting command-not-found)
+# fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh-other/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # User configuration
 
