@@ -129,11 +129,14 @@ source ~/.zsh-other/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #####################################################
+
 # I don't know why but "setopt share_history" which oh-my-zsh has by default in ".oh-my-zsh/lib/history.zsh"
 # It doesn't work with my school's linux server for students
 # setopt inc_append_history which only writes to the history file doesn't work either
 # so I' have to unset it here, otherwise every command takes like an extra 3 seconds
-unsetopt share_history
+
+# unsetopt share_history
+setopt share_history
 
 #####################################################
 

@@ -7,3 +7,5 @@
 	#helper = cache
 	# Or use this one if you trust the machine 
 	helper = store
+[color]
+	ui = auto
