@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
+if [ "$(basename $SHELL)" != "zsh" ]; then
+    echo "This script can only be run inside Zsh."
+    exit 1
+fi
+
 echo "Setting up..."
 
 if [[ $EUID -ne 0 ]]; then
-  HOMEDIR=$HOME
+    HOMEDIR=$HOME
 else
-  echo "Don't run this as root!"
-  exit 1
+    echo "Don't run this as root!"
+    exit 1
 fi
 CURRENTDIR=$(pwd)
 
