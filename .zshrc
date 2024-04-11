@@ -10,8 +10,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.histfile
 setopt autocd extendedglob nomatch notify
+fpath+=~/.zfunc
 # bindkey -e
-bindkey -v
+# bindkey -v
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
@@ -145,7 +147,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PATH=/home/wenqi/.local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/home/wenqi/Steam:$PATH
 
-if command -v github-copilot-cli >/dev/null 2>&1; then
-    eval "$(github-copilot-cli alias -- "$0")"
-fi
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(gh copilot alias -- zsh)"
+
+source "$HOME/.local.zshrc" 

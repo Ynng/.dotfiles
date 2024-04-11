@@ -94,8 +94,10 @@ symlink_and_backup $HOMEDIR/.p10k.zsh $CURRENTDIR/.p10k.zsh
 #ZSHRC
 echo "linking zshrc..."
 symlink_and_backup $HOMEDIR/.zshrc $CURRENTDIR/.zshrc
+echo "linking local zshrc..."
+symlink_and_backup $HOMEDIR/.local.zshrc $CURRENTDIR/.local.zshrc
 
-#ZSHRC
+#BASHRC
 echo "linking bashrc..."
 symlink_and_backup $HOMEDIR/.bashrc $CURRENTDIR/.bashrc
 
