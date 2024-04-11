@@ -9,3 +9,35 @@
 	helper = store
 [color]
 	ui = auto
+[alias]
+	pr = "!f() { if [ $# -lt 1 ]; then echo \"Usage: git pr <id> [<remote>]  # assuming <remote>[=origin] is on GitHub\"; else git checkout -q \"$(git rev-parse --verify HEAD)\" && git fetch -fv \"${2:-origin}\" pull/\"$1\"/head:pr/\"$1\" && git checkout pr/\"$1\"; fi; }; f"
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+    a = add
+    ap = add -p
+    c = commit --verbose
+    ca = commit -a --verbose
+    cm = commit -m
+    cam = commit -a -m
+    m = commit --amend --verbose
+    
+    d = diff
+    ds = diff --stat
+    dc = diff --cached
+
+    s = status -s
+    co = checkout
+    cob = checkout -b
+
+	# list branches sorted by last modified
+    b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+
+	main-branch = "!f() { git symbolic-ref refs/remotes/${1:-origin}/HEAD | cut -d'/' -f4; }; f"
+	remotesh = "!f() { git remote set-head ${1:-origin} --auto; }; f"
+	com = "!f() { git checkout $(git main-branch ${1:-origin}); }; f"
+	upm = "!f() { git pull --rebase --autostash ${1:-origin} $(git main-branch ${1:-origin}); }; f"
+	rebasem = "!f() { git rebase -i --autosquash ${1:-origin}/$(git main-branch ${1:-origin}) --no-verify; }; f"
+	fomo = "!f() { $(git upm ${1:-origin}) && $(git rebasem ${1:-origin}); }; f"
