@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$(basename $SHELL)" != "zsh" ]; then
-    echo "This script can only be run inside Zsh."
+    echo "This script requires zsh to run"
     exit 1
 fi
 
@@ -13,7 +13,8 @@ else
     echo "Don't run this as root!"
     exit 1
 fi
-CURRENTDIR=$(pwd)
+# Absolute path of this script
+CURRENTDIR=$(dirname "$(readlink -f "$0")")
 
 # asks if user wants to install software
 echo "Do you want to install software? (y/n)"
