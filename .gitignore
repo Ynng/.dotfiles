@@ -2,3 +2,5 @@ install.sh*
 
 .history/
 .local.zshrc
+
+.DS_Store
