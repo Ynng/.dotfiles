@@ -43,3 +43,5 @@
 	upm = "!f() { git pull --rebase --autostash ${1:-origin} $(git main-branch ${1:-origin}); }; f"
 	rebasem = "!f() { git rebase -i --autosquash --autostash ${1:-origin}/$(git main-branch ${1:-origin}) --no-verify; }; f"
 	fomo = "!f() { git upm ${1:-origin} && git rebasem ${1:-origin}; }; f"
+[pull]
+	rebase = false
