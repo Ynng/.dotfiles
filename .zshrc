@@ -17,6 +17,8 @@ fpath+=~/.zfunc
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
+zstyle ':omz:plugins:nvm' autoload yes
+# zstyle ':omz:plugins:nvm' lazy yes
 
 # autoload -Uz compinit
 # compinit
@@ -96,7 +98,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(poetry git zsh-syntax-highlighting command-not-found)
+zstyle ':autocomplete:*' min-input 0
+plugins=(poetry git zsh-syntax-highlighting command-not-found nvm)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh-other/zsh-autocomplete/zsh-autocomplete.plugin.zsh
@@ -146,10 +149,6 @@ export PATH=/home/wenqi/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/home/wenqi/Steam:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(gh copilot alias -- zsh)"
+# eval "$(gh copilot alias -- zsh)"
 
 source "$HOME/.local.zshrc" 
